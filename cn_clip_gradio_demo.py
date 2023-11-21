@@ -26,8 +26,13 @@ def classify(image, Model = model, Classes = chinese_classes):
         text_features /= text_features.norm(dim=-1, keepdim=True)
         similarity =(100.0 * image_features @ text_features.T).softmax(dim=-1)
         values, indices = similarity[0].topk(1)
-        return classes_clip[indices],values.item()
+        # return classes_clip[indices], values.item()
+        return classes_clip[indices]
 
-interface = gradio.Interface(fn=classify,inputs="image",outputs="text")
+interface = gradio.Interface(fn=classify,
+                             inputs="image",
+                             outputs="label",
+                             title="基于Chinese-CLIP的开放词汇物体识别"
+                             )
 interface.launch()
 # print(chinese_classes[indices],values.item())
