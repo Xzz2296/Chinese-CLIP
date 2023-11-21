@@ -10,7 +10,15 @@
 <p align="center">
         <a href="https://www.modelscope.cn/models?name=clip&tasks=multi-modal-embedding">ModelScope</a>&nbsp ｜ &nbsp<a href="https://www.modelscope.cn/studios/damo/chinese_clip_applications/summary">Demo</a>&nbsp ｜ &nbsp<a href="https://arxiv.org/abs/2211.01335">Paper</a>&nbsp ｜ &nbspBlog
 </p>
-<br><br>
+
+----
+# 写在前面
+<br>
+本课程项目是在Chinese-CLIP基础上进行了修改优化，加载demo界面请运行cn_clip_gradio_demo.py,如缺少权重文件会自动进行下载。
+label_cn.txt包含有1300种常见物体类别标签，作为预先设置的类别，能够有效进行开放词汇物体识别。
+<br>
+
+----
 
 本项目为CLIP模型的**中文**版本，使用大规模中文数据进行训练（~2亿图文对），旨在帮助用户快速实现中文领域的[图文特征&相似度计算](#API快速上手)、[跨模态检索](#跨模态检索)、[零样本图片分类](#零样本图像分类)等任务。本项目代码基于<b>[open_clip project](https://github.com/mlfoundations/open_clip)</b>建设，并针对中文领域数据以及在中文数据上实现更好的效果做了优化。本项目提供了API、训练代码和测试代码，下文中将详细介绍细节。
 <br><br>
